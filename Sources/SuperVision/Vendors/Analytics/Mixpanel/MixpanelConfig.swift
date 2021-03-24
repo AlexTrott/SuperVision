@@ -8,7 +8,7 @@
 import Foundation
 
 public struct MixpanelConfig: InitializableConfig {
-    let token: String
-    let serverURL: String
-    let loggingEnabled: Bool
+    public let token: String
+    public let serverURL: String
+    public let loggingEnabled: Bool
 }

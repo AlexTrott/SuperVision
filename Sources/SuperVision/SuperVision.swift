@@ -23,12 +23,12 @@ public class SuperVision {
             fatalError("SuperVision: No config Supplied")
         }
 
-        let analyticConfig = config.analytics.config
-        let analyticManager = config.analytics.manager
+        let analyticConfig = config.analyticConfig.config
+        let analyticManager = config.analyticConfig.manager
         snitch = AnalyticsService(reporter: analyticManager.reporter(with: analyticConfig))
 
-        let crashConfig = config.crash.config
-        let crashManager = config.crash.manager
+        let crashConfig = config.crashConfig.config
+        let crashManager = config.crashConfig.manager
         clue = CrashService(reporter: crashManager.reporter(with: crashConfig))
     }
 

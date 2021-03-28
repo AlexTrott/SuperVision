@@ -8,6 +8,17 @@
 import Foundation
 
 public struct SuperVisionConfig {
-    public let analytics: (manager: AnalyticManager, config: InitializableConfig)
-    public let crash: (manager: CrashManager, config: InitializableConfig)
+    public typealias AnalyticConfig = (manager: AnalyticManager, config: InitializableConfig)
+    public typealias CrashConfig = (manager: CrashManager, config: InitializableConfig)
+
+    public let analyticConfig: AnalyticConfig
+    public let crashConfig: CrashConfig
+
+    public init(
+        analyticConfig: AnalyticConfig,
+        crashConfig: CrashConfig
+    ) {
+        self.analyticConfig = analyticConfig
+        self.crashConfig = crashConfig
+    }
 }

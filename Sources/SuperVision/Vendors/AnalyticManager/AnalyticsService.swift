@@ -12,6 +12,7 @@ public protocol AnalyticsServicable {
 
     init(reporter: AnalyticReporter)
 
+    func track(_ event: Event)
     func track(_ event: Event, properties: [String: String])
     func startTimer(_ event: Event)
     func stopTimer(_ event: Event)
@@ -25,7 +26,11 @@ internal class AnalyticsService: AnalyticsServicable {
         self.reporter = reporter
     }
 
-    internal func track(_ event: Event, properties: [String : String] = [:]) {
+    internal func track(_ event: Event) {
+        reporter.track(event, properties: [:])
+    }
+
+    internal func track(_ event: Event, properties: [String : String]) {
         reporter.track(event, properties: properties)
     }
 

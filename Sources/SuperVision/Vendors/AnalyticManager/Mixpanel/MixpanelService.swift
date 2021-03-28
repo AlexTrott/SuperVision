@@ -1,5 +1,5 @@
 //
-//  MixpanelInitlizer.swift
+//  MixpanelService.swift
 //  
 //
 //  Created by Alex Trott on 24/03/2021.
